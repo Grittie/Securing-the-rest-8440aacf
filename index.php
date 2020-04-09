@@ -8,6 +8,7 @@
 
 <body>
     <?php
+        session_start();
     function select($query)
     {
         $host = 'localhost';
@@ -43,6 +44,12 @@
         }
 
         return $formatResult;
+    }
+
+    if (isset($_COOKIE['loggedInUser'])) {
+    } else {
+        header("Refresh: 2; url=login.php");
+    exit("You are not logged in, redirecting to login page.");
     }
     ?>
 
@@ -105,6 +112,7 @@
                             </tr>
                         EOT;
             }
+
             ?>
         </tbody>
     </table>

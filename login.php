@@ -53,7 +53,7 @@ try {
         $data = $q->fetchAll(PDO::FETCH_ASSOC);
 
          if (isset($data)) {
-        echo("<div class='redstatus'><b>Login failed</b></div>");
+        echo("<div class='redstatus'><b>Login failed, due to incorrect credentials </b></div>");
     }
 
       foreach ($data as $row) {
